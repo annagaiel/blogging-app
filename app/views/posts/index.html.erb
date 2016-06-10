@@ -1,18 +1,18 @@
-<h1>Index</h1>
+<h1>Best Blog</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
-    <th>title</th>
-    <th>content</th>
-    <th>action</th>
+    <th>Title</th>
+    <th>Content</th>
+    <td></td>
   </tr>
   <% @posts.each do |post| %>
   <tr>
     <td><a href="/posts/<%= post.id %>"><%= post.title %></a></td>
     <td><%= post.content %></td>
-    <td><%= link_to "Delete", "/posts/#{post.id}", method: :delete %></td>
+    <td><%= link_to "Delete", "/posts/#{post.id}", method: :delete, class:"btn-sm btn-danger" %></td>
   </tr>
   <% end %>
 </table>
 
-<%= link_to "New Post", new_post_path %>
+<%= link_to "New Post", new_post_path, class:"btn btn-sm btn-primary" %>
