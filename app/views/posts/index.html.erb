@@ -4,12 +4,14 @@
   <tr>
     <th>Title</th>
     <th>Content</th>
+    <th>Category</th>
     <td></td>
   </tr>
   <% @posts.each do |post| %>
   <tr>
     <td><a href="/posts/<%= post.id %>"><%= post.title %></a></td>
     <td><%= post.content %></td>
+    <td><%= post.category.name %></td>
     <td><%= link_to "Delete", "/posts/#{post.id}", method: :delete, class:"btn-sm btn-danger" %></td>
   </tr>
   <% end %>
