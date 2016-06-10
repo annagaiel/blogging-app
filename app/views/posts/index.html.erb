@@ -1,3 +1,18 @@
 <h1>Index</h1>
 
+<table>
+  <tr>
+    <th>title</th>
+    <th>content</th>
+    <th>action</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><a href="/posts/<%= post.id %>"><%= post.title %></a></td>
+    <td><%= post.content %></td>
+    <td><%= link_to "Delete", "/posts/#{post.id}", method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+
 <%= link_to "New Post", new_post_path %>

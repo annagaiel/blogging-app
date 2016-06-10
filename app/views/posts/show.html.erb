@@ -1,1 +1,13 @@
+<%= link_to "Homepage", "/" %>
+
 <h1>Show</h1>
+
+<p>
+  <%= @post.title %>
+</p>
+
+<p>
+  <%= @post.content %>
+</p>
+
+<%= link_to "Edit", edit_post_path(@post) %>
